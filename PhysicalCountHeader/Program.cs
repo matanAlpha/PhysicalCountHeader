@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace PhysicalCountHeader
@@ -16,18 +12,14 @@ namespace PhysicalCountHeader
             string headerLine = "CONO,WHLO,STNB,STRN,STQI,STDI,STTM,STBT,STAG";
 
             DateTime theNow = DateTime.Now;
-            readWriteDelteFile(headerLine, theNow);
+            writeToFile(headerLine, theNow);
 
         }
 
-        private static void readWriteDelteFile(string headerLine, DateTime theNow)
+        private static void writeToFile(string headerLine, DateTime theNow)
         {
             string[] outLines = new string[2];
-            // Display the file contents by using a foreach loop.
-            System.Console.WriteLine("Contents of WriteLines2.txt = ");
-
             outLines[0] = headerLine;
-
 
             string reportedDate = theNow.ToString("yyyyMMdd");
             string reportedTime = theNow.ToString("HHmmss");
